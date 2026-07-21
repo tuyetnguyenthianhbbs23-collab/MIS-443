@@ -1,0 +1,7 @@
+﻿order_id,customer_id,order_date,total_amount,status
+1001,1,6/1/2023,949.98,delivered
+1002,2,6/5/2023,1299.99,shipped
+1003,3,6/10/2023,129.98,delivered
+1004,1,6/15/2023,159.99,delivered
+1005,4,6/20/2023,259.98,pending
+1006,5,6/25/2023,79.99,shipped

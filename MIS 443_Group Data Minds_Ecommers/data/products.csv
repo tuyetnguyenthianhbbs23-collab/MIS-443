@@ -1,0 +1,9 @@
+﻿product_id,product_name,category_id,price,stock_quantity,created_date
+101,Smartphone Pro,1,899.99,50,1/10/2023
+102,Laptop Ultra,1,1299.99,25,1/15/2023
+103,Designer Jeans,2,79.99,100,2/1/2023
+104,SQL Mastery Book,3,49.99,75,2/10/2023
+105,Garden Tool Set,4,129.99,30,3/1/2023
+106,Tennis Racket,5,159.99,40,3/15/2023
+107,Wireless Headphones,1,199.99,60,4/1/2023
+108,Summer Dress,2,59.99,80,4/10/2023

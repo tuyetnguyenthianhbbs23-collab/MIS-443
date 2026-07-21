@@ -1,0 +1,7 @@
+﻿customer_id,first_name,last_name,email,registration_date,city,country
+1,Sarah,Connor,sarah.connor@email.com,1/15/2023,Los Angeles,USA
+2,Mike,Johnson,mike.johnson@email.com,2/20/2023,New York,USA
+3,Emma,Watson,emma.watson@email.com,3/10/2023,London,UK
+4,Carlos,Rodriguez,carlos.rodriguez@email.com,4/5/2023,Madrid,Spain
+5,Lisa,Chen,lisa.chen@email.com,5/12/2023,Toronto,Canada
+6,James,Park,james.park@email.com,6/30/2023,NULL,Australia
