@@ -1,32 +1,19 @@
-# MIS443 – School Database Project
+# School Database Management System
 
-## Student Information
+## Overview
 
-**Student Name:** Nguyen Thi Anh Tuyet
+This project was developed for the **MIS443 – Business Data Management** course.
 
-**Student ID:** 2332300334
+The objective of this project is to demonstrate the process of creating a relational database in PostgreSQL, importing data from CSV files, and executing SQL queries to retrieve meaningful information.
 
-**Course:** MIS443 – Business Data Management
-
----
-
-# Project Overview
-
-This project demonstrates how to create and manage a relational database using PostgreSQL and pgAdmin. The project includes database creation, table creation, importing CSV data, and executing SQL queries.
-
-The database contains four related tables:
-
-- Students
-- Professors
-- Courses
-- Enrollments
+The database models a simple university system consisting of students, professors, courses, and enrollments.
 
 ---
 
 # Project Structure
 
 ```
-MIS443_Lab4_2332300334
+School_Database_Project
 │
 ├── README.md
 │
@@ -50,30 +37,28 @@ MIS443_Lab4_2332300334
 
 # Software Requirements
 
-Before running this project, install the following software.
+Before running this project, make sure the following software is installed.
 
 - PostgreSQL
 - pgAdmin 4
 
 ---
 
-# Database Setup
+# How to Run This Project
 
-## Step 1. Create the Database
+## Step 1 – Create the Database
 
-Open pgAdmin.
+Open **pgAdmin**.
 
-Open Query Tool.
+Open **Query Tool**.
 
-Open the file
+Run
 
 ```
 01_create_database.sql
 ```
 
-Execute the script.
-
-The script creates a database named
+This script creates the database named
 
 ```
 school_db
@@ -87,23 +72,17 @@ Right-click **Databases**
 
 Select **Refresh**
 
-You should now see
-
-```
-school_db
-```
-
-under Databases.
-
 ---
 
-## Step 2. Connect to the Database
+## Step 2 – Connect to the Database
 
-Expand
+Open
 
 ```
 Databases
-    ↓
+
+↓
+
 school_db
 ```
 
@@ -115,80 +94,38 @@ school_db
 
 ↓
 
-Choose
+Select
 
 ```
 Query Tool
 ```
 
-**Important**
-
-All remaining SQL scripts must be executed inside the **school_db** database.
+From this step onward, all SQL scripts must be executed inside **school_db**.
 
 ---
 
-## Step 3. Create Tables
+## Step 3 – Create Tables
 
-Open
+Run
 
 ```
 02_create_tables.sql
 ```
 
-Run the script.
-
-This script creates four tables:
+This script creates four tables.
 
 - students
 - professors
 - courses
 - enrollments
 
-It also creates all primary key and foreign key constraints.
-
-After execution,
-
-Expand
-
-```
-school_db
-
-↓
-
-Schemas
-
-↓
-
-public
-
-↓
-
-Tables
-```
-
-You should see
-
-```
-students
-
-professors
-
-courses
-
-enrollments
-```
+The script also creates all primary key and foreign key constraints.
 
 ---
 
-## Step 4. Import CSV Data
+## Step 4 – Import CSV Files
 
-The CSV files are located in
-
-```
-data/
-```
-
-Files included
+CSV files are stored inside the **data** folder.
 
 ```
 students.csv
@@ -200,13 +137,20 @@ courses.csv
 enrollments.csv
 ```
 
-### Method 1 (Recommended)
+Import the files in the following order.
 
-Import using pgAdmin.
+1. students
+2. professors
+3. courses
+4. enrollments
 
-For each table,
+### Option 1 (Recommended)
 
-Right-click the table
+Use **Import/Export Data** in pgAdmin.
+
+For each table
+
+Right-click table
 
 ↓
 
@@ -218,220 +162,147 @@ Import
 
 ↓
 
-Select the corresponding CSV file
-
-↓
-
-Format = CSV
-
-Header = Yes
-
-Delimiter = ,
-
-Repeat for all four tables.
-
-Import order:
-
-1. students
-2. professors
-3. courses
-4. enrollments
+Choose the corresponding CSV file.
 
 ---
 
-### Method 2 (COPY Command)
+### Option 2
 
-The file
+Run
 
 ```
 03_import_data.sql
 ```
 
-contains COPY commands.
+If the CSV files are stored in another directory,
 
-If the CSV files are stored in another folder,
+update the file paths inside the COPY commands.
 
-update the file paths before running the script.
-
-Example
-
-```sql
-COPY students(...)
-FROM 'D:/MIS443/data/students.csv'
-WITH (
-    FORMAT csv,
-    HEADER true,
-    DELIMITER ','
-);
-```
-
-**Note**
-
-On some Windows computers,
-
-the COPY command may return
-
-```
-Permission denied
-```
-
-because PostgreSQL Server cannot access protected folders (such as OneDrive or Documents).
-
-If this happens,
-
-please use **Import/Export Data** in pgAdmin instead.
+> **Note**
+>
+> On some Windows systems, PostgreSQL may not have permission to access files stored in protected folders (such as OneDrive or Documents). If a **Permission denied** error occurs, import the CSV files using **pgAdmin Import/Export Data** instead.
 
 ---
 
-## Step 5. Execute SQL Queries
+## Step 5 – Execute SQL Queries
 
-Open
+Run
 
 ```
 04_queries.sql
 ```
 
-Run the script.
+The file contains sixteen SQL queries that demonstrate:
 
-The file contains sixteen SQL queries.
-
-The queries demonstrate:
-
-- Filtering
+- Data filtering
 - Sorting
-- Aggregate Functions
+- Aggregate functions
 - GROUP BY
 - HAVING
-- INNER JOIN
-- NULL Handling
+- JOIN operations
+- NULL handling
 
-The query results will be displayed in the Data Output panel.
+Query results will appear in the **Data Output** panel.
 
 ---
 
 # Database Schema
 
-The project contains four related tables.
+The database consists of four related tables.
 
 ```
 Students
       │
       │ student_id
       ▼
-
 Enrollments
-
-▲
-│ course_id
-│
-
+      ▲
+      │ course_id
+      │
 Courses
-
-▲
-│ professor_id
-│
-
+      ▲
+      │ professor_id
+      │
 Professors
 ```
 
-Relationships
-
-- Students → Enrollments
-- Courses → Enrollments
-- Professors → Courses
-
 ---
 
-# Files Description
+# Project Files
 
 | File | Description |
 |------|-------------|
-| 01_create_database.sql | Creates the database |
-| 02_create_tables.sql | Creates all tables and relationships |
-| 03_import_data.sql | Imports CSV data into the tables |
-| 04_queries.sql | Contains all required SQL queries |
-| students.csv | Student data |
-| professors.csv | Professor data |
-| courses.csv | Course data |
-| enrollments.csv | Enrollment data |
-| MIS443_Report.docx | Project report |
+|01_create_database.sql|Creates the database|
+|02_create_tables.sql|Creates tables and relationships|
+|03_import_data.sql|Imports data from CSV files|
+|04_queries.sql|Contains all required SQL queries|
+|students.csv|Student dataset|
+|professors.csv|Professor dataset|
+|courses.csv|Course dataset|
+|enrollments.csv|Enrollment dataset|
+|MIS443_Report.docx|Project report|
 
 ---
 
 # Expected Output
 
-After completing all steps,
+After completing all steps successfully, the project should contain:
 
-the project should contain:
-
-✓ Database created successfully
-
-✓ Four tables created
-
-✓ CSV data imported
-
-✓ SQL queries executed successfully
-
-✓ Query results displayed correctly
+- A PostgreSQL database named **school_db**
+- Four relational tables
+- Imported data from all CSV files
+- Successfully executed SQL queries
+- Correct query results displayed in pgAdmin
 
 ---
 
-# Troubleshooting
+# Common Issues
 
-## Error
+### Error
 
 ```
 relation "students" does not exist
 ```
 
-Solution
+**Solution**
 
-Run
-
-```
-02_create_tables.sql
-```
-
-before importing data.
+Run **02_create_tables.sql** before importing data.
 
 ---
 
-## Error
+### Error
 
 ```
 Permission denied
 ```
 
-Solution
+**Solution**
 
-Use pgAdmin Import/Export Data instead of the COPY command.
+Import CSV files using **pgAdmin Import/Export Data**, or update the file path in **03_import_data.sql**.
 
 ---
 
-## Error
+### Error
 
 ```
 Foreign key constraint violation
 ```
 
-Solution
+**Solution**
 
-Import CSV files in the following order:
+Import the CSV files in the following order:
 
 1. students
-
 2. professors
-
 3. courses
-
 4. enrollments
 
 ---
 
 # Author
 
-Nguyen Thi Anh Tuyet
+**Student Name:** Nguyen Thi Anh Tuyet
 
-Student ID: 2332300334
+**Student ID:** 2332300334
 
-MIS443 – Business Data Management
+**Course:** MIS443 – Business Data Management
