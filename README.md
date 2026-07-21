@@ -1,16 +1,4 @@
 # 🎓 School Database Management System
-
-<p align="center">
-  <img src="ERD.png" alt="School Database ERD" width="900">
-</p>
-
-<p align="center">
-  <b>MIS443 – Business Data Management</b><br>
-  A PostgreSQL database project demonstrating relational database design, data import, and SQL query execution.
-</p>
-
----
-
 ## 📖 About the Project
 
 This project recreates the **School Database** from **SQL Practice Online** using PostgreSQL and pgAdmin.
