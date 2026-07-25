@@ -1,15 +1,12 @@
-# 🎓 MIS 443 – Business Data Management
+<p align="center">
+  <img src="assets/banner.png" alt="MIS443 Banner" width="100%">
+</p>
+
+# 🎓 MIS443 – Business Data Management
+
 ### Quarter 4 • Academic Year 2025–2026
 
-<p align="center">
-  <img src="banner.png" alt="MIS443 Banner" width="100%">
-</p>
-
-<p align="center">
-  <b>Learning to transform data into meaningful business insights through database design and SQL.</b>
-</p>
-
----
+Welcome to my MIS443 repository...
 
 # 📖 Course Overview
 
