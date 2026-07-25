@@ -101,7 +101,7 @@ A PostgreSQL database project simulating a university management system.
 📂 **Project Folder**
 
 ```text
-MIS443_2032300044_School
+MIS443_2032300344_School
 ```
 
 ---
@@ -113,13 +113,13 @@ MIS443-Q4-2025_2026
 │
 ├── Assignment0
 │
-├── MIS443_2032300044_School
+├── MIS443_2032300344_School
 │   ├── codes
 │   ├── data
 │   ├── report
 │   └── README.md
 │
-├── MIS443_GroupD2NB_Banking
+├── MIS443_DataMinds_Ecommers
 │
 └── README.md
 ```
@@ -133,7 +133,7 @@ MIS443-Q4-2025_2026
 | Course | MIS443 – Business Data Management |
 | Semester | Quarter 4 – 2025–2026 |
 | Institution | Eastern International University |
-| Instructor | *Add instructor name here* |
+| Instructor | Dang Thai Doan |
 
 ---
 
