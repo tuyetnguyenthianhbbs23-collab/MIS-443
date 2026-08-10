@@ -60,6 +60,8 @@ This project was developed for the **MIS443 – Business Data Management** cours
 - Jupyter Notebook
 
 ---
+## Entity Relationship Diagram (ERD)
+
 
 ## How to Run
 
