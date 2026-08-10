@@ -62,6 +62,7 @@ This project was developed for the **MIS443 – Business Data Management** cours
 ---
 ## Entity Relationship Diagram (ERD)
 
+![EDR Group Project](images/EDR Group Project.png)
 
 ## How to Run
 
